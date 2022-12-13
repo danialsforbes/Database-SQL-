@@ -1,0 +1,117 @@
+Three types of operators are Arithmetic, Comparison, and Logical
+
+SELECT lifeexpectancy, lifeexpectancy+5.5
+FROM country
+WHERE gnp > 130000
+
+Adds 5.5 years to each lifeexpectancy value
+
+SELECT population, population-350000
+FROM country
+WHERE name = 'United States'
+
+The arithmetic operator subtracts 350,000 from the population value
+
+SELECT population, population*1.15
+FROM country
+WHERE name = 'Malta'
+
+The arithmetic operator increases the population by 15 percent
+
+
+SELECT  population, surfacearea, population/surfacearea
+FROM country
+WHERE population/surfacearea > 3000
+
+The airthmetic operator divices the population by surfacearea
+
+
+SELECT population, surfacearea, population/surfacearea, population%surfacearea
+FROM country
+WHERE name = 'San Marino'
+
+Calculates and displays the remainder of the population divided by the surfacearea
+
+SELECT name, district, population 
+FROM city
+WHERE countrycode = 'IND'
+AND district = 'Delhi'
+
+Query return data items for cities in IND and whose district is called Delhi
+
+SELECT name, district, population 
+FROM city 
+WHERE district = 'Delhi' OR district = 'Punjab
+
+Query return data items for cities with districts called Delhi or Punjab
+
+SELECT name, district, population 
+FROM city 
+WHERE district IN ('Delhi','Punjab','Kerala')
+
+Query return data items for cities with districts called Delhi, Punjab, and Kerala
+
+SELECT name, district, population
+FROM city 
+WHERE district LIKE 'West%'
+
+Query return data items for cities whose district names start with the name West
+
+SELECT countrycode, name 
+FROM city 
+WHERE countrycode LIKE '_B_'
+
+Query return data items for cities whose country code has the letter B as second character of the three-character code
+
+SELECT countrycode, name, district, population 
+FROM city 
+WHERE population BETWEEN 500000 AND 505000
+
+Query return data items for cities whose populations are between 500,000 and 505,000 people
+
+SELECT name, district, population 
+FROM city 
+WHERE countrycode = 'CAN' AND district NOT IN ('Ontario','Alberta')
+
+Query return data items for cities in Canada except those in Ontario and Alberta
+
+
+SELECT name, district, population 
+FROM city WHERE countrycode = 'CAN' 
+AND district <> 'Ontario' 
+AND district <> 'Alberta'
+
+SELECT name, district, population 
+FROM city 
+WHERE countrycode = 'CAN' 
+AND district NOT IN ('Ontario','Alberta')
+
+Both achieve the same results by using different SQL statements
+
+SELECT name, district, population 
+FROM city 
+WHERE countrycode = 'PAK' 
+AND (district = 'Punjab' OR district = 'Sindh') 
+AND population > 1500000
+
+The parentheses help further define expected query results
+
+
+SELECT name, lifeexpectancy, lifeexpectancy+5.5 AS newlifeexpectancy 
+FROM country 
+WHERE gnp > 1300000
+
+Query lists the new life expectancy for these countries, with the alias newlifeexpectancy used for the column name in the query output
+
+SELECT name, lifeexpectancy, lifeexpectancy+5.5 AS 'new life expectancy' 
+FROM country 
+WHERE gnp > 130000
+
+Query lists the new life expectancy for these countries, with the resulting alias new life expectancy (with spaces) used for the column name in the query output
+
+SELECT name, lifeexpectancy 
+FROM country 
+WHERE lifeexpectancy IS NULL 
+AND name NOT LIKE '%Island%';
+
+Query lists countries with no data for life expectancy will have null values. 
