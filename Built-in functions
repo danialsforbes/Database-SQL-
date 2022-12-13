@@ -44,7 +44,7 @@ replaces Mani from the first three characters giving the following results: Mani
 SELECT ID, LTRIM(District) District 
 FROM city;
 
-removes blank spaces on the left beginning of a string
+removes leading spaces of a string
 
 
 SELECT ID, RTRIM(District) District
