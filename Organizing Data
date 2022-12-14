@@ -49,5 +49,24 @@ GROUP BY continent ORDER BY 1,2;
 
 returns the count of countries from South America with a population over 12000000 and Antarctica ordered by first two columns
 
+SELECT continent, COUNT(name) AS 'countries' 
+FROM country 
+WHERE (continent = 'South America' AND population > 12000000) 
+OR continent = 'Antarctica' 
+GROUP BY continent 
+HAVING COUNT(name) > 5 ORDER BY 1,2;
+
+returns only continents that have more than five countries in them. Either from South America or Antartica
+
+SELECT  NAME, REGION, POPULATION,  RANK () OVER POP 'pop-rank'
+FROM country
+WHERE region in ('Caribbean', 'Polynesia')
+AND population < 70000
+WINDOW POP AS (ORDER BY population);
+
+assigns a rank to each country in the result set, ordered by population size, using a column alias of POP-RANK for the assigned ranking
+
+
+
 
 
