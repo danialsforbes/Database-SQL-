@@ -1,0 +1,43 @@
+Set operators are used for the results of multiple queries to be combined into a single result set. Also called compound queries
+
+SELECT Name, District, Population 
+FROM city
+UNION
+SELECT Name, Code, Continent, Population
+FROM Country;
+
+query list cities with distinct values
+
+SELECT Name, District 
+FROM city 
+UNION ALL 
+SELECT Name, Code, Continent, Population 
+FROM Country;
+
+Query list citeis with distinct values and duplicate values
+
+//INTERSECT is used to combine two restlt sets and returns the data that is common in both o fthe result sets
+//MINUS is used to combine two resutl sets and returns the data from the first result set thta is not present in the second result set
+//INNER JOIN-returns only the overlapping data between the two tables
+//LEFT JOIN-returns only the rows from the left table
+//RIGHT JOIN-returns only rows on the right
+//JOIN FULL-returns whole rows from both tables
+
+//joins works when each table have related columns between them
+
+SELECT cn.Name AS "City Name", 
+FROM city cn 
+JOIN country co 
+ON cn.CountryCode=co.Code;
+
+query results cn.Name from two tables. ON statements makes two columns as a qualifier
+
+SELECT city.Name AS Cities, country.name AS countries 
+FROM city 
+INNER JOIN Country 
+ON city.CountryCode = country.code
+
+query results only overlapping data between the two tables
+
+
+//SELF JOIN-to join a table to itself using either LEFT JOIN or INNER JOIN
