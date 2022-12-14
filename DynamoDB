@@ -1,1 +1,31 @@
 DynamoDB -fully managed, serverless, key-value No SQl database
+5 benefits: Scalability, Redundancy, Recoverability, Low latency, Security and Flexibility
+DynamoDB-table name and primary key must be specified at table creation
+DynamoDB table has at least one column that acts as teh primary key
+
+The primary key is the only data that is required when storing a row in a DynamoDB table. Any other data is optional
+
+A column in a DynamoDB table is called an attribute. An attribute is something that does not need to be broken down any further
+
+Primary keys can consist of one or two atrributes
+
+an item is a group of attributes that is uniquely identifiable among all of the other items. Items are like rows
+
+Simple primary key-consists of one attribute. The attribute is called the partition key or hsh key
+
+Composite primary key consists of two attributes. First attribute is partition key, second attribute is the sort key or range attribute
+
+DynamoDB tables store item data in partitions
+
+Table data is partitioned and indexed by the primary key
+
+Tables whose data is distributed evenly across multiple partitions generally deliver the best performance
+
+Data can be pulled from multiple partitons depending on teh value for the primary key 
+
+Results from queries can have different length (additional attributes)
+
+Using the global table option creates a DynamoDB table that is automatically replicated across your choice of AWS Regions worldwide
+
+A global table is a collection of one or more DynamoDB tables, which must all be owned by a single AWS account
+
