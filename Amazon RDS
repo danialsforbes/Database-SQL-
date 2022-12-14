@@ -1,0 +1,14 @@
+Amazon RDS-managed database service that sets up and operates a relational database in the cloud.
+DB instance-isolated database enviornment that runs in the cloud
+Because RDS is a fully managed service, one task that it automatically performs is the periodic backup on a DB instance
+The first snapshot of a DB instance contains the full data. 
+Subsequent snapshots are incremental and contain only the data that changed since the most recent snapshot.
+When creating a database in AWS, it may take up to 20 min to create
+Amazon RDS can be highly available by using Multi-AZ deployment. This config automatically generates a standby copy of the database instance in another Availability Zone in the same VPC
+Amazon RDS scaling options: Instance class and storage capacity
+
+Aurora-relational database engine
+Aurora DB cluster consists of one or more DB instances and a cluser volume that manages the data for those DB instances
+What makes up a cluster? Primary DB instance and Aurora Replica
+
+
