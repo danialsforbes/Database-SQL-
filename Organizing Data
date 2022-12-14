@@ -1,0 +1,53 @@
+SELECT name, continent, surface area
+FROM country
+WHERE surfcearea >= 500000
+
+returns query in order in which it was originally loaded
+
+SELECT name, continent, surfacearea
+FROM country
+WHERE surfacearea >= 500000
+ORDER BY surfacearea ASC
+
+arranges query in ascending order of surfacearea
+
+
+SELECT name, continent, surfacearea
+FROM country
+WHERE surfacearea >= 500000
+ORDER BY surfacearea DESC
+
+arranges query in descending order  of surfacearea
+
+
+SELECT name, continent, surfacearea
+FROM country
+WHERE surfacearea >= 500000
+ORDER BY continent ASC, surfacearea DESC
+
+arranges query in ascending order of continent and descending order of surfacearea
+
+SELECT name, continent, surfacearea 
+FROM country 
+WHERE surfacearea >= 5000000 ORDER BY 2 ASC, 3 DESC;
+
+used implicit column placeholders to arrange query in ascending order of continent and decending order of surfacearea
+
+SELECT continent, name 
+FROM country 
+WHERE (continent='South America' AND population > 20000000) 
+OR continent = 'Antartica'
+ORDER BY 1,2;
+ returns the continent and name of each country that has one or both of the following characteristics
+
+
+SELECT continent, COUNT(name) AS 'countries' 
+FROM country 
+WHERE (continent = 'South America' AND population > 12000000) 
+OR continent = 'Antarctica' 
+GROUP BY continent ORDER BY 1,2;
+
+returns the count of countries from South America with a population over 12000000 and Antarctica ordered by first two columns
+
+
+
